@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 
 export default function Project() {
     return (
@@ -32,7 +32,7 @@ export default function Project() {
                                     <div
                                     class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"
                                     >
-                                    <a
+                                    <Link
                                         aria-label="Home"
                                         class="pointer-events-auto"
                                         href="/"
@@ -65,7 +65,7 @@ export default function Project() {
                                             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=3840&amp;q=75 3840w
                                         "
                                         src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=3840&amp;q=75"
-                                    /></a>
+                                    /></Link>
                                     </div>
                                 </div>
                                 <div class="flex flex-1 justify-end md:justify-center">
@@ -115,41 +115,37 @@ export default function Project() {
                                         class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
                                     >
                                         <li>
-                                        <a
+                                        <Link
                                             class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                             href="/about"
-                                            >About</a
-                                        >
+                                            >About</Link>
                                         </li>
                                         <li>
-                                        <a
+                                        <Link
                                             class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                             href="/articles"
-                                            >Articles</a
-                                        >
+                                            >Articles</Link>
                                         </li>
                                         <li>
-                                        <a
+                                        <Link
                                             class="relative block px-3 py-2 transition text-teal-500 dark:text-teal-400"
                                             href="/projects"
                                             >Projects<span
                                             class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"
                                             ></span
-                                        ></a>
+                                        ></Link>
                                         </li>
                                         <li>
-                                        <a
+                                        <Link
                                             class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                             href="/speaking"
-                                            >Speaking</a
-                                        >
+                                            >Speaking</Link>
                                         </li>
                                         <li>
-                                        <a
+                                        <Link
                                             class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                             href="/uses"
-                                            >Uses</a
-                                        >
+                                            >Uses</Link>
                                         </li>
                                     </ul>
                                     </nav>
@@ -244,12 +240,11 @@ export default function Project() {
                                     <div
                                         class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
                                     ></div>
-                                    <a href="http://planetaria.tech"
+                                    <Link href="http://planetaria.tech"
                                         ><span
                                         class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
                                         ></span
-                                        ><span class="relative z-10">Planetaria</span></a
-                                    >
+                                        ><span class="relative z-10">Planetaria</span></Link>
                                     </h2>
                                     <p
                                     class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
@@ -294,12 +289,11 @@ export default function Project() {
                                     <div
                                         class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
                                     ></div>
-                                    <a href="#"
+                                    <Link href="#"
                                         ><span
                                         class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
                                         ></span
-                                        ><span class="relative z-10">Animaginary</span></a
-                                    >
+                                        ><span class="relative z-10">Animaginary</span></Link>
                                     </h2>
                                     <p
                                     class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
@@ -344,12 +338,11 @@ export default function Project() {
                                     <div
                                         class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
                                     ></div>
-                                    <a href="#"
+                                    <Link href="#"
                                         ><span
                                         class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
                                         ></span
-                                        ><span class="relative z-10">HelioStream</span></a
-                                    >
+                                        ><span class="relative z-10">HelioStream</span></Link>
                                     </h2>
                                     <p
                                     class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
@@ -394,12 +387,11 @@ export default function Project() {
                                     <div
                                         class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
                                     ></div>
-                                    <a href="#"
+                                    <Link href="#"
                                         ><span
                                         class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
                                         ></span
-                                        ><span class="relative z-10">cosmOS</span></a
-                                    >
+                                        ><span class="relative z-10">cosmOS</span></Link>
                                     </h2>
                                     <p
                                     class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
@@ -444,12 +436,11 @@ export default function Project() {
                                     <div
                                         class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
                                     ></div>
-                                    <a href="#"
+                                    <Link href="#"
                                         ><span
                                         class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
                                         ></span
-                                        ><span class="relative z-10">OpenShuttle</span></a
-                                    >
+                                        ><span class="relative z-10">OpenShuttle</span></Link>
                                     </h2>
                                     <p
                                     class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"
@@ -493,23 +484,19 @@ export default function Project() {
                                 <div
                                     class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200"
                                 >
-                                    <a
+                                    <Link
                                     class="transition hover:text-teal-500 dark:hover:text-teal-400"
                                     href="/about"
-                                    >About</a
-                                    ><a
+                                    >About</Link><Link
                                     class="transition hover:text-teal-500 dark:hover:text-teal-400"
                                     href="/projects"
-                                    >Projects</a
-                                    ><a
+                                    >Projects</Link><Link
                                     class="transition hover:text-teal-500 dark:hover:text-teal-400"
                                     href="/speaking"
-                                    >Speaking</a
-                                    ><a
+                                    >Speaking</Link><Link
                                     class="transition hover:text-teal-500 dark:hover:text-teal-400"
                                     href="/uses"
-                                    >Uses</a
-                                    >
+                                    >Uses</Link>
                                 </div>
                                 <p class="text-sm text-zinc-400 dark:text-zinc-500">
                                     ©

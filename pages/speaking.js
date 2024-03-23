@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Speaking() {
   return (
     <>
@@ -29,7 +31,7 @@ export default function Speaking() {
                       <div class="relative flex gap-4">
                         <div class="flex flex-1">
                           <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
-                            <a
+                            <Link
                               aria-label="Home"
                               class="pointer-events-auto"
                               href="/"
@@ -64,7 +66,7 @@ export default function Speaking() {
                                         "
                                 src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=3840&amp;q=75"
                               />
-                            </a>
+                            </Link>
                           </div>
                         </div>
                         <div class="flex flex-1 justify-end md:justify-center">
@@ -113,45 +115,45 @@ export default function Speaking() {
                           <nav class="pointer-events-auto hidden md:block">
                             <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/about"
                                 >
                                   About
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/articles"
                                 >
                                   Articles
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/projects"
                                 >
                                   Projects
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition text-teal-500 dark:text-teal-400"
                                   href="/speaking"
                                 >
                                   Speaking
                                   <span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/uses"
                                 >
                                   Uses
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                           </nav>
@@ -235,13 +237,13 @@ export default function Speaking() {
                                 <article class="group relative flex flex-col items-start">
                                   <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                                     <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                    <a href="#">
+                                    <Link href="#">
                                       <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                       <span class="relative z-10">
                                         In space, no one can watch you stream —
                                         until now
                                       </span>
-                                    </a>
+                                    </Link>
                                   </h3>
                                   <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
                                     <span
@@ -280,13 +282,13 @@ export default function Speaking() {
                                 <article class="group relative flex flex-col items-start">
                                   <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                                     <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                    <a href="#">
+                                    <Link href="#">
                                       <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                       <span class="relative z-10">
                                         Lessons learned from our first product
                                         recall
                                       </span>
-                                    </a>
+                                    </Link>
                                   </h3>
                                   <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
                                     <span
@@ -344,12 +346,12 @@ export default function Speaking() {
                                 <article class="group relative flex flex-col items-start">
                                   <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                                     <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                    <a href="#">
+                                    <Link href="#">
                                       <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                       <span class="relative z-10">
                                         Using design as a competitive advantage
                                       </span>
-                                    </a>
+                                    </Link>
                                   </h3>
                                   <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
                                     <span
@@ -388,13 +390,13 @@ export default function Speaking() {
                                 <article class="group relative flex flex-col items-start">
                                   <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                                     <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                    <a href="#">
+                                    <Link href="#">
                                       <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                       <span class="relative z-10">
                                         Bootstrapping an aerospace company to
                                         $17M ARR
                                       </span>
-                                    </a>
+                                    </Link>
                                   </h3>
                                   <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
                                     <span
@@ -433,13 +435,13 @@ export default function Speaking() {
                                 <article class="group relative flex flex-col items-start">
                                   <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                                     <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                    <a href="#">
+                                    <Link href="#">
                                       <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                       <span class="relative z-10">
                                         Programming your company operating
                                         system
                                       </span>
-                                    </a>
+                                    </Link>
                                   </h3>
                                   <p class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5">
                                     <span
@@ -495,30 +497,30 @@ export default function Speaking() {
                     <div class="mx-auto max-w-2xl lg:max-w-5xl">
                       <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
                         <div class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                          <a
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/about"
                           >
                             About
-                          </a>
-                          <a
+                          </Link>
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/projects"
                           >
                             Projects
-                          </a>
-                          <a
+                          </Link>
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/speaking"
                           >
                             Speaking
-                          </a>
-                          <a
+                          </Link>
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/uses"
                           >
                             Uses
-                          </a>
+                          </Link>
                         </div>
                         <p class="text-sm text-zinc-400 dark:text-zinc-500">
                           © Spencer Sharp. All rights reserved.

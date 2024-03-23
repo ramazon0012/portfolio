@@ -1,4 +1,20 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Link from "next/link";
 export default function Article() {
+  const [posts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/articles/")
+      .then((response) => {
+        console.log(response.data); 
+      })
+      .catch((error) => {
+        console.error("Error fetching articles:", error);
+      });
+  }, []);
+
   return (
     <>
       <div class="flex w-full">
@@ -29,7 +45,7 @@ export default function Article() {
                       <div class="relative flex gap-4">
                         <div class="flex flex-1">
                           <div class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
-                            <a
+                            <Link
                               aria-label="Home"
                               class="pointer-events-auto"
                               href="/"
@@ -64,7 +80,7 @@ export default function Article() {
                                         "
                                 src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=3840&amp;q=75"
                               />
-                            </a>
+                            </Link>
                           </div>
                         </div>
                         <div class="flex flex-1 justify-end md:justify-center">
@@ -113,45 +129,45 @@ export default function Article() {
                           <nav class="pointer-events-auto hidden md:block">
                             <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/about"
                                 >
                                   About
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition text-teal-500 dark:text-teal-400"
                                   href="/articles"
                                 >
                                   Articles
                                   <span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/projects"
                                 >
                                   Projects
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/speaking"
                                 >
                                   Speaking
-                                </a>
+                                </Link>
                               </li>
                               <li>
-                                <a
+                                <Link
                                   class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/uses"
                                 >
                                   Uses
-                                </a>
+                                </Link>
                               </li>
                             </ul>
                           </nav>
@@ -218,183 +234,61 @@ export default function Article() {
                     <div class="mt-16 sm:mt-20">
                       <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
                         <div class="flex max-w-3xl flex-col space-y-16">
-                          <article class="md:grid md:grid-cols-4 md:items-baseline">
-                            <div class="md:col-span-3 group relative flex flex-col items-start">
-                              <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                                <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                <a href="/articles/crafting-a-design-system-for-a-multiplanetary-future">
-                                  <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                                  <span class="relative z-10">
-                                    Crafting a design system for a
-                                    multiplanetary future
+                          {posts.map((post) => (
+                            <article class="md:grid md:grid-cols-4 md:items-baseline">
+                              <div class="md:col-span-3 group relative flex flex-col items-start">
+                                <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                                  <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
+                                  <Link href="/articles/crafting-a-design-system-for-a-multiplanetary-future">
+                                    <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
+                                    <span class="relative z-10">
+                                      {post.name}
+                                    </span>
+                                  </Link>
+                                </h2>
+                                <time
+                                  class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
+                                  datetime="2022-09-05"
+                                >
+                                  <span
+                                    class="absolute inset-y-0 left-0 flex items-center"
+                                    aria-hidden="true"
+                                  >
+                                    <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
                                   </span>
-                                </a>
-                              </h2>
+                                  September 5, 2022
+                                </time>
+                                <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                                  {post.description}
+                                </p>
+                                <div
+                                  aria-hidden="true"
+                                  class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
+                                >
+                                  Read article
+                                  <svg
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    aria-hidden="true"
+                                    class="ml-1 h-4 w-4 stroke-current"
+                                  >
+                                    <path
+                                      d="M6.75 5.75 9.25 8l-2.5 2.25"
+                                      stroke-width="1.5"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    ></path>
+                                  </svg>
+                                </div>
+                              </div>
                               <time
-                                class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
+                                class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
                                 datetime="2022-09-05"
                               >
-                                <span
-                                  class="absolute inset-y-0 left-0 flex items-center"
-                                  aria-hidden="true"
-                                >
-                                  <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                                </span>
                                 September 5, 2022
                               </time>
-                              <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                Most companies try to stay ahead of the curve
-                                when it comes to visual design, but for
-                                Planetaria we needed to create a brand that
-                                would still inspire us 100 years from now when
-                                humanity has spread across our entire solar
-                                system.
-                              </p>
-                              <div
-                                aria-hidden="true"
-                                class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
-                              >
-                                Read article
-                                <svg
-                                  viewBox="0 0 16 16"
-                                  fill="none"
-                                  aria-hidden="true"
-                                  class="ml-1 h-4 w-4 stroke-current"
-                                >
-                                  <path
-                                    d="M6.75 5.75 9.25 8l-2.5 2.25"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  ></path>
-                                </svg>
-                              </div>
-                            </div>
-                            <time
-                              class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
-                              datetime="2022-09-05"
-                            >
-                              September 5, 2022
-                            </time>
-                          </article>
-                          <article class="md:grid md:grid-cols-4 md:items-baseline">
-                            <div class="md:col-span-3 group relative flex flex-col items-start">
-                              <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                                <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                <a href="/articles/introducing-animaginary">
-                                  <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                                  <span class="relative z-10">
-                                    Introducing Animaginary: High performance
-                                    web animations
-                                  </span>
-                                </a>
-                              </h2>
-                              <time
-                                class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                                datetime="2022-09-02"
-                              >
-                                <span
-                                  class="absolute inset-y-0 left-0 flex items-center"
-                                  aria-hidden="true"
-                                >
-                                  <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                                </span>
-                                September 2, 2022
-                              </time>
-                              <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                When you’re building a website for a company as
-                                ambitious as Planetaria, you need to make an
-                                impression. I wanted people to visit our website
-                                and see animations that looked more realistic
-                                than reality itself.
-                              </p>
-                              <div
-                                aria-hidden="true"
-                                class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
-                              >
-                                Read article
-                                <svg
-                                  viewBox="0 0 16 16"
-                                  fill="none"
-                                  aria-hidden="true"
-                                  class="ml-1 h-4 w-4 stroke-current"
-                                >
-                                  <path
-                                    d="M6.75 5.75 9.25 8l-2.5 2.25"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  ></path>
-                                </svg>
-                              </div>
-                            </div>
-                            <time
-                              class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
-                              datetime="2022-09-02"
-                            >
-                              September 2, 2022
-                            </time>
-                          </article>
-                          <article class="md:grid md:grid-cols-4 md:items-baseline">
-                            <div class="md:col-span-3 group relative flex flex-col items-start">
-                              <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                                <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                <a href="/articles/rewriting-the-cosmos-kernel-in-rust">
-                                  <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                                  <span class="relative z-10">
-                                    Rewriting the cosmOS kernel in Rust
-                                  </span>
-                                </a>
-                              </h2>
-                              <time
-                                class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                                datetime="2022-07-14"
-                              >
-                                <span
-                                  class="absolute inset-y-0 left-0 flex items-center"
-                                  aria-hidden="true"
-                                >
-                                  <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                                </span>
-                                July 14, 2022
-                              </time>
-                              <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                                When we released the first version of cosmOS
-                                last year, it was written in Go. Go is a
-                                wonderful programming language, but it’s been a
-                                while since I’ve seen an article on the front
-                                page of Hacker News about rewriting some
-                                important tool in Go and I see articles on there
-                                about rewriting things in Rust every single
-                                week.
-                              </p>
-                              <div
-                                aria-hidden="true"
-                                class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
-                              >
-                                Read article
-                                <svg
-                                  viewBox="0 0 16 16"
-                                  fill="none"
-                                  aria-hidden="true"
-                                  class="ml-1 h-4 w-4 stroke-current"
-                                >
-                                  <path
-                                    d="M6.75 5.75 9.25 8l-2.5 2.25"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  ></path>
-                                </svg>
-                              </div>
-                            </div>
-                            <time
-                              class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
-                              datetime="2022-07-14"
-                            >
-                              July 14, 2022
-                            </time>
-                          </article>
+                            </article>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -411,30 +305,30 @@ export default function Article() {
                     <div class="mx-auto max-w-2xl lg:max-w-5xl">
                       <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
                         <div class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                          <a
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/about"
                           >
                             About
-                          </a>
-                          <a
+                          </Link>
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/projects"
                           >
                             Projects
-                          </a>
-                          <a
+                          </Link>
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/speaking"
                           >
                             Speaking
-                          </a>
-                          <a
+                          </Link>
+                          <Link
                             class="transition hover:text-teal-500 dark:hover:text-teal-400"
                             href="/uses"
                           >
                             Uses
-                          </a>
+                          </Link>
                         </div>
                         <p class="text-sm text-zinc-400 dark:text-zinc-500">
                           © Spencer Sharp. All rights reserved.
