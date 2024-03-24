@@ -1,12 +1,8 @@
 import Link from "next/link";
-import Head from "next/head";
 
-export default function Home() {
+export default function Detail() {
   return (
     <>
-    <Head>
-      <title>About Me</title>
-    </Head>
       <div class="flex w-full">
         <div class="fixed inset-0 flex justify-center sm:px-8">
           <div class="flex w-full max-w-7xl lg:px-8">
@@ -120,11 +116,10 @@ export default function Home() {
                             <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
                               <li>
                                 <Link
-                                  class="relative block px-3 py-2 transition text-teal-500 dark:text-teal-400"
+                                  class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
                                   href="/about"
                                 >
                                   About
-                                  <span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
                                 </Link>
                               </li>
                               <li>
@@ -206,170 +201,121 @@ export default function Home() {
             </div>
           </header>
           <main class="flex-auto">
-            <div class="sm:px-8 mt-16 sm:mt-32">
+            <div class="sm:px-8 mt-16 lg:mt-32">
               <div class="mx-auto w-full max-w-7xl lg:px-8">
                 <div class="relative px-4 sm:px-8 lg:px-12">
                   <div class="mx-auto max-w-2xl lg:max-w-5xl">
-                    <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-                      <div class="lg:pl-20">
-                        <div class="max-w-xs px-2.5 lg:max-w-none">
-                          <img
-                            alt=""
-                            loading="lazy"
-                            width="800"
-                            height="800"
-                            decoding="async"
-                            data-nimg="1"
-                            class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-                            style={{ color: "transparent" }}
-                            sizes="(min-width: 1024px) 32rem, 20rem"
-                            srcset="
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=16&amp;q=75     16w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=32&amp;q=75     32w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=48&amp;q=75     48w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=64&amp;q=75     64w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=96&amp;q=75     96w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=128&amp;q=75   128w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=256&amp;q=75   256w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=384&amp;q=75   384w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=640&amp;q=75   640w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=750&amp;q=75   750w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=828&amp;q=75   828w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=1080&amp;q=75 1080w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=1200&amp;q=75 1200w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=1920&amp;q=75 1920w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=2048&amp;q=75 2048w,
-                                /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=3840&amp;q=75 3840w
-                            "
-                            src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=3840&amp;q=75"
-                          />
-                        </div>
-                      </div>
-                      <div class="lg:order-first lg:row-span-2">
-                        <h1 class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-                          I’m Spencer Sharp. I live in New York City, where I
-                          design the future.
-                        </h1>
-                        <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-                          <p>
-                            I’ve loved making things for as long as I can
-                            remember, and wrote my first program when I was 6
-                            years old, just two weeks after my mom brought home
-                            the brand new Macintosh LC 550 that I taught myself
-                            to type on.
-                          </p>
-                          <p>
-                            The only thing I loved more than computers as a kid
-                            was space. When I was 8, I climbed the 40-foot oak
-                            tree at the back of our yard while wearing my older
-                            sister’s motorcycle helmet, counted down from three,
-                            and jumped — hoping the tree was tall enough that
-                            with just a bit of momentum I’d be able to get to
-                            orbit.
-                          </p>
-                          <p>
-                            I spent the next few summers indoors working on a
-                            rocket design, while I recovered from the multiple
-                            surgeries it took to fix my badly broken legs. It
-                            took nine iterations, but when I was 15 I sent my
-                            dad’s Blackberry into orbit and was able to transmit
-                            a photo back down to our family computer from space.
-                          </p>
-                          <p>
-                            Today, I’m the founder of Planetaria, where we’re
-                            working on civilian space suits and manned shuttle
-                            kits you can assemble at home so that the next
-                            generation of kids really <em>can</em> make it to
-                            orbit — from the comfort of their own backyards.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="lg:pl-20">
-                        <ul role="list">
-                          <li class="flex">
-                            <Link
-                              class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-                              href="#"
+                    <div class="xl:relative">
+                      <div class="mx-auto max-w-2xl">
+                        <article>
+                          <header class="flex flex-col">
+                            <h1 class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+                              Crafting a design system for a multiplanetary
+                              future
+                            </h1>
+                            <time
+                              datetime="2022-09-05"
+                              class="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
                             >
-                              <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
-                              >
-                                <path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"></path>
-                              </svg>
-                              <span class="ml-4">Follow on X</span>
-                            </Link>
-                          </li>
-                          <li class="mt-4 flex">
-                            <Link
-                              class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-                              href="#"
-                            >
-                              <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
-                              >
-                                <path d="M12 3c-2.444 0-2.75.01-3.71.054-.959.044-1.613.196-2.185.418A4.412 4.412 0 0 0 4.51 4.511c-.5.5-.809 1.002-1.039 1.594-.222.572-.374 1.226-.418 2.184C3.01 9.25 3 9.556 3 12s.01 2.75.054 3.71c.044.959.196 1.613.418 2.185.23.592.538 1.094 1.039 1.595.5.5 1.002.808 1.594 1.038.572.222 1.226.374 2.184.418C9.25 20.99 9.556 21 12 21s2.75-.01 3.71-.054c.959-.044 1.613-.196 2.185-.419a4.412 4.412 0 0 0 1.595-1.038c.5-.5.808-1.002 1.038-1.594.222-.572.374-1.226.418-2.184.044-.96.054-1.267.054-3.711s-.01-2.75-.054-3.71c-.044-.959-.196-1.613-.419-2.185A4.412 4.412 0 0 0 19.49 4.51c-.5-.5-1.002-.809-1.594-1.039-.572-.222-1.226-.374-2.184-.418C14.75 3.01 14.444 3 12 3Zm0 1.622c2.403 0 2.688.009 3.637.052.877.04 1.354.187 1.67.31.421.163.72.358 1.036.673.315.315.51.615.673 1.035.123.317.27.794.31 1.671.043.95.052 1.234.052 3.637s-.009 2.688-.052 3.637c-.04.877-.187 1.354-.31 1.67-.163.421-.358.72-.673 1.036a2.79 2.79 0 0 1-1.035.673c-.317.123-.794.27-1.671.31-.95.043-1.234.052-3.637.052s-2.688-.009-3.637-.052c-.877-.04-1.354-.187-1.67-.31a2.789 2.789 0 0 1-1.036-.673 2.79 2.79 0 0 1-.673-1.035c-.123-.317-.27-.794-.31-1.671-.043-.95-.052-1.234-.052-3.637s.009-2.688.052-3.637c.04-.877.187-1.354.31-1.67.163-.421.358-.72.673-1.036.315-.315.615-.51 1.035-.673.317-.123.794-.27 1.671-.31.95-.043 1.234-.052 3.637-.052Z"></path>
-                                <path d="M12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-7.622a4.622 4.622 0 1 0 0 9.244 4.622 4.622 0 0 0 0-9.244Zm5.884-.182a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0Z"></path>
-                              </svg>
-                              <span class="ml-4">Follow on Instagram</span>
-                            </Link>
-                          </li>
-                          <li class="mt-4 flex">
-                            <Link
-                              class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-                              href="#"
-                            >
-                              <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
-                                ></path>
-                              </svg>
-                              <span class="ml-4">Follow on GitHub</span>
-                            </Link>
-                          </li>
-                          <li class="mt-4 flex">
-                            <Link
-                              class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-                              href="#"
-                            >
-                              <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
-                              >
-                                <path d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387 2.7 0 3.2 1.778 3.2 4.091v4.715zM7.003 8.575a1.546 1.546 0 01-1.548-1.549 1.548 1.548 0 111.547 1.549zm1.336 9.764H5.666V9.75H8.34v8.589zM19.67 3H4.329C3.593 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.338C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3h.003z"></path>
-                              </svg>
-                              <span class="ml-4">Follow on LinkedIn</span>
-                            </Link>
-                          </li>
-                          <li class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex">
-                            <Link
-                              class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-                              href="mailto:spencer@planetaria.tech"
-                            >
-                              <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                                class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-                                ></path>
-                              </svg>
-                              <span class="ml-4">spencer@planetaria.tech</span>
-                            </Link>
-                          </li>
-                        </ul>
+                              <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+                              <span class="ml-3">September 5, 2022</span>
+                            </time>
+                          </header>
+                          <div
+                            class="mt-8 prose dark:prose-invert"
+                            data-mdx-content="true"
+                          >
+                            <p>
+                              Most companies try to stay ahead of the curve when
+                              it comes to visual design, but for Planetaria we
+                              needed to create a brand that would still inspire
+                              us 100 years from now when humanity has spread
+                              across our entire solar system.
+                            </p>
+                            <img
+                              alt=""
+                              loading="lazy"
+                              width="1310"
+                              height="872"
+                              decoding="async"
+                              data-nimg="1"
+                              style={{ color: "transparent" }}
+                              srcset="
+                                    /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplanetaria-design-system.d4cfce90.png&amp;w=1920&amp;q=75 1x,
+                                    /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplanetaria-design-system.d4cfce90.png&amp;w=3840&amp;q=75 2x
+                                    "
+                              src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplanetaria-design-system.d4cfce90.png&amp;w=3840&amp;q=75"
+                            />
+                            <p>
+                              I knew that to get it right I was going to have to
+                              replicate the viewing conditions of someone from
+                              the future, so I grabbed my space helmet from the
+                              closet, created a new Figma document, and got to
+                              work.
+                            </p>
+                            <h2>Sermone fata</h2>
+                            <p>
+                              Lorem markdownum, bracchia in redibam! Terque unda
+                              puppi nec, linguae posterior in utraque respicere
+                              candidus Mimasque formae; quae conantem cervice.
+                              Parcite variatus, redolentia adeunt. Tyrioque
+                              dies, naufraga sua adit partibus celanda torquere
+                              temptata, erit maneat et ramos,
+                              <Link href="#">iam</Link> ait dominari potitus! Tibi
+                              litora matremque fumantia condi radicibus opusque.
+                            </p>
+                            <p>
+                              Deus feram verumque, fecit, ira tamen, terras per
+                              alienae victum. Mutantur levitate quas ubi arcum
+                              ripas oculos abest. Adest
+                              <Link href="#">commissaque victae</Link> in gemitus
+                              nectareis ire diva dotibus ora, et findi huic
+                              invenit; fatis? Fractaque dare superinposita
+                              nimiumque simulatoremque sanguine, at voce
+                              aestibus diu! Quid veterum hausit tu nil utinam
+                              paternos ima, commentaque.
+                            </p>
+                            <p>
+                              Aere repetiti cognataque natus. Habebat vela
+                              solutis saepe munus nondum adhuc oscula nomina
+                              pignora corpus deserat.
+                            </p>
+                            <h2>Lethaei Pindumve me quae dinumerat Pavor</h2>
+                            <p>
+                              Idem se saxa fata pollentibus geminos; quos
+                              pedibus. Est urnis Herses omnes nec divite: et
+                              ille illa furit sim verbis Cyllenius.
+                            </p>
+                            <ol>
+                              <li>Captus inpleverunt collo</li>
+                              <li>Nec nam placebant</li>
+                              <li>Siquos vulgus</li>
+                              <li>Dictis carissime fugae</li>
+                              <li>A tacitos nulla viginti</li>
+                            </ol>
+                            <p>
+                              Ungues fistula annoso, ille addit linoque motatque
+                              uberior verso <Link href="#">rubuerunt</Link> confine
+                              desuetaque. <em>Sanguine</em> anteit emerguntque
+                              expugnacior est pennas iniqui ecce
+                              <strong>haeret</strong> genus: peiora imagine
+                              fossas Cephisos formosa! Refugitque amata
+                              <Link href="#">refelli</Link> supplex. Summa brevis
+                              vetuere tenebas, hostes vetantis, suppressit,
+                              arreptum regna. Postquam conpescit iuvenis habet
+                              corpus, et erratica, perdere, tot mota ars talis.
+                            </p>
+
+                            <p>
+                              Sit volat naturam; motu Cancri. Erat pro simul
+                              quae valuit quoque timorem quam proelia: illo
+                              patrio
+                              <em>esse summus</em>, enim sua serpentibus,
+                              Hyleusque. Est coniuge recuso; refert Coroniden
+                              ignotos manat, adfectu.
+                            </p>
+                          </div>
+                        </article>
                       </div>
                     </div>
                   </div>
