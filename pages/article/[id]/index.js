@@ -1,8 +1,36 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios"; // Assuming you use Axios for API requests
 import Link from "next/link";
+import Image from "next/image";
+import Head from "next/head";
 
-export default function Detail() {
+export default function DetailPage() {
+  const router = useRouter();
+  const { id } = router.query; // Get the dynamic id parameter from the URL
+  const [item, setItem] = useState(null);
+
+  useEffect(() => {
+    if (id) {
+      axios.get(`http://127.00.0.1:8000/article/${id}`)
+        .then((response) => {
+          setItem(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching item:', error);
+        });
+    }
+  }, [id]);
+
+  if (!item) {
+    return <div>Loading...</div>; // Render a loading indicator while data is being fetched
+  }
+
   return (
     <>
+      <Head>
+        {item.name}
+      </Head>
       <div className="flex w-full">
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
@@ -210,29 +238,22 @@ export default function Detail() {
                         <article>
                           <header className="flex flex-col">
                             <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-                              Crafting a design system for a multiplanetary
-                              future
+                              {item.name}
                             </h1>
                             <time
                               datetime="2022-09-05"
                               className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
                             >
                               <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                              <span className="ml-3">September 5, 2022</span>
+                              <span className="ml-3">{item.created_at}</span>
                             </time>
                           </header>
                           <div
                             className="mt-8 prose dark:prose-invert"
                             data-mdx-content="true"
                           >
-                            <p>
-                              Most companies try to stay ahead of the curve when
-                              it comes to visual design, but for Planetaria we
-                              needed to create a brand that would still inspire
-                              us 100 years from now when humanity has spread
-                              across our entire solar system.
-                            </p>
-                            <img
+                            <p>{item.description}</p>
+                            <Image
                               alt=""
                               loading="lazy"
                               width="1310"
@@ -240,80 +261,12 @@ export default function Detail() {
                               decoding="async"
                               data-nimg="1"
                               style={{ color: "transparent" }}
-                              srcset="
-                                    /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplanetaria-design-system.d4cfce90.png&amp;w=1920&amp;q=75 1x,
-                                    /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplanetaria-design-system.d4cfce90.png&amp;w=3840&amp;q=75 2x
-                                    "
-                              src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fplanetaria-design-system.d4cfce90.png&amp;w=3840&amp;q=75"
+                              srcset={
+                                    item.image.url
+                                  }
+                              src={item.image.url}
                             />
-                            <p>
-                              I knew that to get it right I was going to have to
-                              replicate the viewing conditions of someone from
-                              the future, so I grabbed my space helmet from the
-                              closet, created a new Figma document, and got to
-                              work.
-                            </p>
-                            <h2>Sermone fata</h2>
-                            <p>
-                              Lorem markdownum, bracchia in redibam! Terque unda
-                              puppi nec, linguae posterior in utraque respicere
-                              candidus Mimasque formae; quae conantem cervice.
-                              Parcite variatus, redolentia adeunt. Tyrioque
-                              dies, naufraga sua adit partibus celanda torquere
-                              temptata, erit maneat et ramos,
-                              <Link href="#">iam</Link> ait dominari potitus! Tibi
-                              litora matremque fumantia condi radicibus opusque.
-                            </p>
-                            <p>
-                              Deus feram verumque, fecit, ira tamen, terras per
-                              alienae victum. Mutantur levitate quas ubi arcum
-                              ripas oculos abest. Adest
-                              <Link href="#">commissaque victae</Link> in gemitus
-                              nectareis ire diva dotibus ora, et findi huic
-                              invenit; fatis? Fractaque dare superinposita
-                              nimiumque simulatoremque sanguine, at voce
-                              aestibus diu! Quid veterum hausit tu nil utinam
-                              paternos ima, commentaque.
-                            </p>
-                            <p>
-                              Aere repetiti cognataque natus. Habebat vela
-                              solutis saepe munus nondum adhuc oscula nomina
-                              pignora corpus deserat.
-                            </p>
-                            <h2>Lethaei Pindumve me quae dinumerat Pavor</h2>
-                            <p>
-                              Idem se saxa fata pollentibus geminos; quos
-                              pedibus. Est urnis Herses omnes nec divite: et
-                              ille illa furit sim verbis Cyllenius.
-                            </p>
-                            <ol>
-                              <li>Captus inpleverunt collo</li>
-                              <li>Nec nam placebant</li>
-                              <li>Siquos vulgus</li>
-                              <li>Dictis carissime fugae</li>
-                              <li>A tacitos nulla viginti</li>
-                            </ol>
-                            <p>
-                              Ungues fistula annoso, ille addit linoque motatque
-                              uberior verso <Link href="#">rubuerunt</Link> confine
-                              desuetaque. <em>Sanguine</em> anteit emerguntque
-                              expugnacior est pennas iniqui ecce
-                              <strong>haeret</strong> genus: peiora imagine
-                              fossas Cephisos formosa! Refugitque amata
-                              <Link href="#">refelli</Link> supplex. Summa brevis
-                              vetuere tenebas, hostes vetantis, suppressit,
-                              arreptum regna. Postquam conpescit iuvenis habet
-                              corpus, et erratica, perdere, tot mota ars talis.
-                            </p>
-
-                            <p>
-                              Sit volat naturam; motu Cancri. Erat pro simul
-                              quae valuit quoque timorem quam proelia: illo
-                              patrio
-                              <em>esse summus</em>, enim sua serpentibus,
-                              Hyleusque. Est coniuge recuso; refert Coroniden
-                              ignotos manat, adfectu.
-                            </p>
+                            <p>{item.body}</p>
                           </div>
                         </article>
                       </div>

@@ -1,8 +1,12 @@
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Speaking() {
   return (
     <>
+      <Head>
+        <title>Speaking</title>
+      </Head>
       <div class="flex w-full">
         <div class="fixed inset-0 flex justify-center sm:px-8">
           <div class="flex w-full max-w-7xl lg:px-8">

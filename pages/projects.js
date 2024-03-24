@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Head from "next/head";
 import Image from "next/image";
 
 export default function Article() {
@@ -17,6 +18,9 @@ export default function Article() {
   }, []);
   return (
     <>
+    <Head>
+      <title>Projects</title>
+    </Head>
       <div class="flex w-full">
         <div class="fixed inset-0 flex justify-center sm:px-8">
           <div class="flex w-full max-w-7xl lg:px-8">
@@ -254,7 +258,7 @@ export default function Article() {
                             </div>
                             <h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                                 <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                <Link href="http://planetaria.tech">
+                                <Link href={project.url}>
                                 <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                 <span class="relative z-10">{ project.name }</span>
                                 </Link>

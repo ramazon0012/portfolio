@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Head from "next/head";
 import Link from "next/link";
 
 export default function Article() {
@@ -14,9 +15,11 @@ export default function Article() {
         console.error("Error fetching articles:", error);
       });
   }, []);
-
   return (
     <>
+    <Head>
+      <title>Articles</title>
+    </Head>
       <div className="flex w-full">
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
@@ -239,7 +242,7 @@ export default function Article() {
                               <div className="md:col-span-3 group relative flex flex-col items-start">
                                 <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                                   <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                                  <Link href="/articles/crafting-a-design-system-for-a-multiplanetary-future">
+                                  <Link href={`/article/${article.id}`}>
                                     <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                     <span className="relative z-10">
                                       {article.name}
