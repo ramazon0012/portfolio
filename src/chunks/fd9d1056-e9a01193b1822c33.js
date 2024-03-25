@@ -805,7 +805,7 @@
           ["acceptCharset", "accept-charset"],
           ["htmlFor", "for"],
           ["httpEquiv", "http-equiv"],
-          ["crossOrigin", "crossorigin"],
+          ["crossOrigin", "crossOrigin"],
           ["accentHeight", "accent-height"],
           ["alignmentBaseline", "alignment-baseline"],
           ["arabicForm", "arabic-form"],
@@ -854,11 +854,11 @@
           ["strikethroughThickness", "strikethrough-thickness"],
           ["strokeDasharray", "stroke-dasharray"],
           ["strokeDashoffset", "stroke-dashoffset"],
-          ["strokeLinecap", "stroke-linecap"],
-          ["strokeLinejoin", "stroke-linejoin"],
+          ["strokeLinecap", "strokeLinecap"],
+          ["strokeLinejoin", "strokeLinejoin"],
           ["strokeMiterlimit", "stroke-miterlimit"],
           ["strokeOpacity", "stroke-opacity"],
-          ["strokeWidth", "stroke-width"],
+          ["strokeWidth", "strokeWidth"],
           ["textAnchor", "text-anchor"],
           ["textDecoration", "text-decoration"],
           ["textRendering", "text-rendering"],
@@ -1322,7 +1322,7 @@
                           l !== n.rel ||
                           e.getAttribute("href") !==
                             (null == n.href ? null : n.href) ||
-                          e.getAttribute("crossorigin") !==
+                          e.getAttribute("crossOrigin") !==
                             (null == n.crossOrigin ? null : n.crossOrigin) ||
                           e.getAttribute("title") !==
                             (null == n.title ? null : n.title)
@@ -1338,7 +1338,7 @@
                             (null == n.src ? null : n.src) ||
                             e.getAttribute("type") !==
                               (null == n.type ? null : n.type) ||
-                            e.getAttribute("crossorigin") !==
+                            e.getAttribute("crossOrigin") !==
                               (null == n.crossOrigin ? null : n.crossOrigin)) &&
                           l &&
                           e.hasAttribute("async") &&
@@ -5058,7 +5058,7 @@
                                   (null == r.rel ? null : r.rel) &&
                                 l.getAttribute("title") ===
                                   (null == r.title ? null : r.title) &&
-                                l.getAttribute("crossorigin") ===
+                                l.getAttribute("crossOrigin") ===
                                   (null == r.crossOrigin ? null : r.crossOrigin)
                               ) {
                                 a.splice(o, 1);
@@ -10493,9 +10493,9 @@
           if (e && t && r) {
             var l = 'link[rel="preload"][as="' + e2(t) + '"]';
             "image" === t && n && n.imageSrcSet
-              ? ((l += '[imagesrcset="' + e2(n.imageSrcSet) + '"]'),
+              ? ((l += '[imageSrcSet="' + e2(n.imageSrcSet) + '"]'),
                 "string" == typeof n.imageSizes &&
-                  (l += '[imagesizes="' + e2(n.imageSizes) + '"]'))
+                  (l += '[imageSizes="' + e2(n.imageSizes) + '"]'))
               : (l += '[href="' + e2(e) + '"]');
             var a = l;
             switch (t) {
@@ -10640,7 +10640,7 @@
         if ("string" == typeof t && t) {
           var l = e2(t);
           (l = 'link[rel="' + e + '"][href="' + l + '"]'),
-            "string" == typeof n && (l += '[crossorigin="' + n + '"]'),
+            "string" == typeof n && (l += '[crossOrigin="' + n + '"]'),
             s5.has(l) ||
               (s5.add(l),
               (e = { rel: e, crossOrigin: n, href: t }),
@@ -11114,18 +11114,18 @@
             var r = t.as,
               l = cP(r, t.crossOrigin),
               a = "string" == typeof t.integrity ? t.integrity : void 0,
-              o = "string" == typeof t.fetchPriority ? t.fetchPriority : void 0;
+              o = "string" == typeof t.fetchpriority ? t.fetchpriority : void 0;
             "style" === r
               ? n.preinitStyle(
                   e,
                   "string" == typeof t.precedence ? t.precedence : void 0,
-                  { crossOrigin: l, integrity: a, fetchPriority: o }
+                  { crossOrigin: l, integrity: a, fetchpriority: o }
                 )
               : "script" === r &&
                 n.preinitScript(e, {
                   crossOrigin: l,
                   integrity: a,
-                  fetchPriority: o,
+                  fetchpriority: o,
                   nonce: "string" == typeof t.nonce ? t.nonce : void 0,
                 });
           }
@@ -11162,8 +11162,8 @@
               integrity: "string" == typeof t.integrity ? t.integrity : void 0,
               nonce: "string" == typeof t.nonce ? t.nonce : void 0,
               type: "string" == typeof t.type ? t.type : void 0,
-              fetchPriority:
-                "string" == typeof t.fetchPriority ? t.fetchPriority : void 0,
+              fetchpriority:
+                "string" == typeof t.fetchpriority ? t.fetchpriority : void 0,
               referrerPolicy:
                 "string" == typeof t.referrerPolicy ? t.referrerPolicy : void 0,
               imageSrcSet:

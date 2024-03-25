@@ -1,7 +1,21 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 export default function Home() {
+  const [post, setPost] = useState({});
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8000/articles")
+      .then((res) => {
+        setPost(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching articles:", error);
+      });
+  }, []);
   return (
     <>
       <Head>
@@ -23,41 +37,41 @@ export default function Home() {
         <link
           rel="preload"
           as="image"
-          imagesrcset="/_next/static/media/avatar.51a13c67.jpg"
-          imagesizes="4rem"
-          fetchPriority="high"
+          imageSrcSet="/_next/static/media/avatar.51a13c67.jpg"
+          imageSizes="4rem"
+          fetchpriority="high"
         />
         <link
           rel="stylesheet"
           href="src/css/c482c5e60011444c.css"
-          crossorigin=""
+          crossOrigin=""
           data-precedence="next"
         />
         <link
           rel="preload"
           as="script"
-          fetchPriority="low"
+          fetchpriority="low"
           href="src/chunks/webpack-e799c267c86ca5b6.js"
-          crossorigin=""
+          crossOrigin=""
         />
         <script
           src="src/chunks/fd9d1056-e9a01193b1822c33.js"
           async=""
-          crossorigin=""
+          crossOrigin=""
         ></script>
         <script
           src="src/chunks/938-97a4c5fe53c20fb7.js"
           async=""
-          crossorigin=""
+          crossOrigin=""
         ></script>
         <script
           src="src/chunks/main-app-ead4ecf24f82c37a.js"
           async=""
-          crossorigin=""
+          crossOrigin=""
         ></script>
         <script
           src="src/chunks/webpack-e799c267c86ca5b6.js"
-          crossorigin=""
+          crossOrigin=""
           async=""
         ></script>
         <script src="src/chunks/250-df4736cf318585a8.js" async=""></script>
@@ -70,8 +84,8 @@ export default function Home() {
         <script src="src/chunks/app/page-7edc645259496314.js" async=""></script>
         <script
           src="src/chunks/polyfills-c67a75d1b6f99dc8.js"
-          crossorigin=""
-          nomodule=""
+          crossOrigin=""
+          noModule=""
         ></script>
       </Head>
       <main className="flex h-full bg-zinc-50 dark:bg-black">
@@ -119,7 +133,7 @@ export default function Home() {
                           >
                             <Image
                               alt=""
-                              fetchPriority="high"
+                              fetchpriority="high"
                               width={512}
                               height={512}
                               decoding="async"
@@ -186,8 +200,8 @@ export default function Home() {
                                   <path
                                     d="M1.75 1.75 4 4.25l2.25-2.5"
                                     fill="none"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
                                     strokeLinejoin="round"
                                   ></path>
                                 </svg>
@@ -263,9 +277,9 @@ export default function Home() {
                               >
                                 <svg
                                   viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                   aria-hidden="true"
                                   className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600"
                                 >
@@ -282,8 +296,8 @@ export default function Home() {
                                 >
                                   <path
                                     d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
                                     strokeLinejoin="round"
                                   ></path>
                                 </svg>
@@ -393,7 +407,7 @@ export default function Home() {
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
-                      srcset="
+                      srcSet="
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=16&amp;q=75     16w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=32&amp;q=75     32w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&amp;w=48&amp;q=75     48w,
@@ -425,7 +439,7 @@ export default function Home() {
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
-                      srcset="
+                      srcSet="
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.3c6c01cf.jpg&amp;w=16&amp;q=75     16w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.3c6c01cf.jpg&amp;w=32&amp;q=75     32w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.3c6c01cf.jpg&amp;w=48&amp;q=75     48w,
@@ -457,7 +471,7 @@ export default function Home() {
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
-                      srcset="
+                      srcSet="
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-3.454151b1.jpg&amp;w=16&amp;q=75     16w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-3.454151b1.jpg&amp;w=32&amp;q=75     32w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-3.454151b1.jpg&amp;w=48&amp;q=75     48w,
@@ -489,7 +503,7 @@ export default function Home() {
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
-                      srcset="
+                      srcSet="
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-4.5c6d0ed6.jpg&amp;w=16&amp;q=75     16w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-4.5c6d0ed6.jpg&amp;w=32&amp;q=75     32w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-4.5c6d0ed6.jpg&amp;w=48&amp;q=75     48w,
@@ -521,7 +535,7 @@ export default function Home() {
                       className="absolute inset-0 h-full w-full object-cover"
                       style={{ color: "transparent" }}
                       sizes="(min-width: 640px) 18rem, 11rem"
-                      srcset="
+                      srcSet="
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-5.6c6f2784.jpg&amp;w=16&amp;q=75     16w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-5.6c6f2784.jpg&amp;w=32&amp;q=75     32w,
                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-5.6c6f2784.jpg&amp;w=48&amp;q=75     48w,
@@ -550,20 +564,20 @@ export default function Home() {
                     <div className="mx-auto max-w-2xl lg:max-w-5xl">
                       <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
                         <div className="flex flex-col gap-16">
+                        {Object.values(post).map((article) => (
                           <article className="group relative flex flex-col items-start">
                             <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                               <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                              <Link href="/articles/crafting-a-design-system-for-a-multiplanetary-future">
+                              <Link href={`/article/${article.id}`}>
                                 <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                 <span className="relative z-10">
-                                  Crafting a design system for a multiplanetary
-                                  future
+                                  {article.name}
                                 </span>
                               </Link>
                             </h2>
                             <time
                               className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                              datetime="2022-09-05"
+                              dateTime="2022-09-05"
                             >
                               <span
                                 className="absolute inset-y-0 left-0 flex items-center"
@@ -571,14 +585,10 @@ export default function Home() {
                               >
                                 <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
                               </span>
-                              September 5, 2022
+                              {article.created_at}
                             </time>
                             <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                              Most companies try to stay ahead of the curve when
-                              it comes to visual design, but for Planetaria we
-                              needed to create a brand that would still inspire
-                              us 100 years from now when humanity has spread
-                              across our entire solar system.
+                              {article.description}
                             </p>
                             <div
                               aria-hidden="true"
@@ -593,114 +603,13 @@ export default function Home() {
                               >
                                 <path
                                   d="M6.75 5.75 9.25 8l-2.5 2.25"
-                                  stroke-width="1.5"
-                                  strokeLinejoin="round"
-                                  stroke-linejoin="round"
-                                ></path>
-                              </svg>
-                            </div>
-                          </article>
-                          <article className="group relative flex flex-col items-start">
-                            <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                              <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                              <Link href="/articles/introducing-animaginary">
-                                <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                                <span className="relative z-10">
-                                  Introducing Animaginary: High performance web
-                                  animations
-                                </span>
-                              </Link>
-                            </h2>
-                            <time
-                              className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                              datetime="2022-09-02"
-                            >
-                              <span
-                                className="absolute inset-y-0 left-0 flex items-center"
-                                aria-hidden="true"
-                              >
-                                <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                              </span>
-                              September 2, 2022
-                            </time>
-                            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                              When you’re building a website for a company as
-                              ambitious as Planetaria, you need to make an
-                              impression. I wanted people to visit our website
-                              and see animations that looked more realistic than
-                              reality itself.
-                            </p>
-                            <div
-                              aria-hidden="true"
-                              className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
-                            >
-                              Read article
-                              <svg
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                aria-hidden="true"
-                                className="ml-1 h-4 w-4 stroke-current"
-                              >
-                                <path
-                                  d="M6.75 5.75 9.25 8l-2.5 2.25"
-                                  stroke-width="1.5"
-                                  stroke-linecap="round"
+                                  strokeWidth="1.5"
                                   strokeLinejoin="round"
                                 ></path>
                               </svg>
                             </div>
                           </article>
-                          <article className="group relative flex flex-col items-start">
-                            <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                              <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                              <Link href="/articles/rewriting-the-cosmos-kernel-in-rust">
-                                <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                                <span className="relative z-10">
-                                  Rewriting the cosmOS kernel in Rust
-                                </span>
-                              </Link>
-                            </h2>
-                            <time
-                              className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                              datetime="2022-07-14"
-                            >
-                              <span
-                                className="absolute inset-y-0 left-0 flex items-center"
-                                aria-hidden="true"
-                              >
-                                <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                              </span>
-                              July 14, 2022
-                            </time>
-                            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                              When we released the first version of cosmOS last
-                              year, it was written in Go. Go is a wonderful
-                              programming language, but it’s been a while since
-                              I’ve seen an article on the front page of Hacker
-                              News about rewriting some important tool in Go and
-                              I see articles on there about rewriting things in
-                              Rust every single week.
-                            </p>
-                            <div
-                              aria-hidden="true"
-                              className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
-                            >
-                              Read article
-                              <svg
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                aria-hidden="true"
-                                className="ml-1 h-4 w-4 stroke-current"
-                              >
-                                <path
-                                  d="M6.75 5.75 9.25 8l-2.5 2.25"
-                                  stroke-width="1.5"
-                                  stroke-linecap="round"
-                                  strokeLinejoin="round"
-                                ></path>
-                              </svg>
-                            </div>
-                          </article>
+                        ))}
                         </div>
                         <div className="space-y-10 lg:pl-16 xl:pl-24">
                           <form
@@ -711,9 +620,9 @@ export default function Home() {
                               <svg
                                 viewBox="0 0 24 24"
                                 fill="none"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 aria-hidden="true"
                                 className="h-6 w-6 flex-none"
                               >
@@ -753,9 +662,9 @@ export default function Home() {
                               <svg
                                 viewBox="0 0 24 24"
                                 fill="none"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 aria-hidden="true"
                                 className="h-6 w-6 flex-none"
                               >
@@ -799,9 +708,9 @@ export default function Home() {
                                     className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                                     aria-label="2019 until Present"
                                   >
-                                    <time datetime="2019">2019</time>
+                                    <time dateTime="2019">2019</time>
                                     <span aria-hidden="true">—</span>
-                                    <time datetime="2024">Present</time>
+                                    <time dateTime="2024">Present</time>
                                   </dd>
                                 </dl>
                               </li>
@@ -833,9 +742,9 @@ export default function Home() {
                                     className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                                     aria-label="2014 until 2019"
                                   >
-                                    <time datetime="2014">2014</time>
+                                    <time dateTime="2014">2014</time>
                                     <span aria-hidden="true">—</span>
-                                    <time datetime="2019">2019</time>
+                                    <time dateTime="2019">2019</time>
                                   </dd>
                                 </dl>
                               </li>
@@ -867,9 +776,9 @@ export default function Home() {
                                     className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                                     aria-label="2011 until 2014"
                                   >
-                                    <time datetime="2011">2011</time>
+                                    <time dateTime="2011">2011</time>
                                     <span aria-hidden="true">—</span>
-                                    <time datetime="2014">2014</time>
+                                    <time dateTime="2014">2014</time>
                                   </dd>
                                 </dl>
                               </li>
@@ -901,7 +810,7 @@ export default function Home() {
                                     className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                                     aria-label="2008 until 2011"
                                   >
-                                    <time datetime="2008">2008</time>
+                                    <time dateTime="2008">2008</time>
                                     <span aria-hidden="true">—</span>
                                     <time datetime="2011">2011</time>
                                   </dd>
@@ -921,8 +830,8 @@ export default function Home() {
                               >
                                 <path
                                   d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-                                  stroke-width="1.5"
-                                  stroke-linecap="round"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
                                   strokeLinejoin="round"
                                 ></path>
                               </svg>

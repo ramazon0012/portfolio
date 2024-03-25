@@ -70,7 +70,7 @@
           r = parseInt(t, 10),
           o = parseInt(n, 10);
         return r > 18 || (18 === r && o >= 3)
-          ? { fetchPriority: e }
+          ? { fetchpriority: e }
           : { fetchpriority: e };
       }
       let g = (0, i.forwardRef)((e, t) => {
@@ -83,7 +83,7 @@
           decoding: u,
           className: s,
           style: d,
-          fetchPriority: f,
+          fetchpriority: f,
           placeholder: c,
           loading: g,
           unoptimized: h,
@@ -135,7 +135,7 @@
             imageSizes: n.sizes,
             crossOrigin: n.crossOrigin,
             referrerPolicy: n.referrerPolicy,
-            ...m(n.fetchPriority),
+            ...m(n.fetchpriority),
           };
         return t && o.default.preload
           ? (o.default.preload(n.src, r), null)
@@ -275,7 +275,7 @@
             onLoadingComplete: S,
             placeholder: C = "empty",
             blurDataURL: P,
-            fetchPriority: j,
+            fetchpriority: j,
             layout: E,
             objectFit: O,
             objectPosition: x,
@@ -466,7 +466,7 @@
           props: {
             ...k,
             loading: T ? "lazy" : m,
-            fetchPriority: j,
+            fetchpriority: j,
             width: F,
             height: G,
             decoding: "async",

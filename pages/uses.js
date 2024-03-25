@@ -42,7 +42,7 @@ export default function Uses() {
                             >
                               <img
                                 alt=""
-                                fetchPriority="high"
+                                fetchpriority="high"
                                 width="512"
                                 height="512"
                                 decoding="async"
@@ -50,7 +50,7 @@ export default function Uses() {
                                 className="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
                                 style={{ color: "transparent" }}
                                 sizes="2.25rem"
-                                srcset="
+                                srcSet="
                                             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=16&amp;q=75     16w,
                                             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=32&amp;q=75     32w,
                                             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=48&amp;q=75     48w,
@@ -93,9 +93,9 @@ export default function Uses() {
                                 <path
                                   d="M1.75 1.75 4 4.25l2.25-2.5"
                                   fill="none"
-                                  stroke-width="1.5"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 ></path>
                               </svg>
                             </button>
@@ -171,9 +171,9 @@ export default function Uses() {
                             >
                               <svg
                                 viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 aria-hidden="true"
                                 className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600"
                               >
@@ -190,9 +190,9 @@ export default function Uses() {
                               >
                                 <path
                                   d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
-                                  stroke-width="1.5"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
                                 ></path>
                               </svg>
                             </button>
