@@ -241,7 +241,7 @@ export default function DetailPage() {
                               {item.name}
                             </h1>
                             <time
-                              datetime="2022-09-05"
+                              dateTime="2022-09-05"
                               className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
                             >
                               <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>

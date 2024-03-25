@@ -251,7 +251,7 @@ export default function Article() {
                                 </h2>
                                 <time
                                   className="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                                  datetime="2022-09-05"
+                                  dateTime="2022-09-05"
                                 >
                                   <span
                                     className="absolute inset-y-0 left-0 flex items-center"
@@ -286,7 +286,7 @@ export default function Article() {
                               </div>
                               <time
                                 className="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
-                                datetime="2022-09-05"
+                                dateTime="2022-09-05"
                               >
                                 { article.created_at }
                               </time>

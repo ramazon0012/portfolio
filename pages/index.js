@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Script from "next/script";
 
 export default function Home() {
   const [post, setPost] = useState({});
@@ -42,51 +43,45 @@ export default function Home() {
           fetchpriority="high"
         />
         <link
-          rel="stylesheet"
-          href="src/css/c482c5e60011444c.css"
-          crossOrigin=""
-          data-precedence="next"
-        />
-        <link
           rel="preload"
           as="script"
           fetchpriority="low"
           href="src/chunks/webpack-e799c267c86ca5b6.js"
           crossOrigin=""
         />
-        <script
+        <Script
           src="src/chunks/fd9d1056-e9a01193b1822c33.js"
           async=""
           crossOrigin=""
-        ></script>
-        <script
+        />
+        <Script
           src="src/chunks/938-97a4c5fe53c20fb7.js"
           async=""
           crossOrigin=""
-        ></script>
-        <script
+        />
+        <Script
           src="src/chunks/main-app-ead4ecf24f82c37a.js"
           async=""
           crossOrigin=""
-        ></script>
-        <script
+        />
+        <Script
           src="src/chunks/webpack-e799c267c86ca5b6.js"
           crossOrigin=""
           async=""
-        ></script>
-        <script src="src/chunks/250-df4736cf318585a8.js" async=""></script>
-        <script src="src/chunks/749-fd41a9816a63edf4.js" async=""></script>
-        <script src="src/chunks/2-4d4fe008758e4991.js" async=""></script>
-        <script
+        />
+        <Script src="src/chunks/250-df4736cf318585a8.js" async=""/>
+        <Script src="src/chunks/749-fd41a9816a63edf4.js" async=""/>
+        <Script src="src/chunks/2-4d4fe008758e4991.js" async=""/>
+        <Script
           src="src/chunks/app/layout-3881dfce185fab35.js"
           async=""
-        ></script>
-        <script src="src/chunks/app/page-7edc645259496314.js" async=""></script>
-        <script
+        />
+        <Script src="src/chunks/app/page-7edc645259496314.js" async=""/>
+        <Script
           src="src/chunks/polyfills-c67a75d1b6f99dc8.js"
           crossOrigin=""
           noModule=""
-        ></script>
+        />
       </Head>
       <main className="flex h-full bg-zinc-50 dark:bg-black">
         <div className="flex w-full">
@@ -812,7 +807,7 @@ export default function Home() {
                                   >
                                     <time dateTime="2008">2008</time>
                                     <span aria-hidden="true">—</span>
-                                    <time datetime="2011">2011</time>
+                                    <time dateTime="2011">2011</time>
                                   </dd>
                                 </dl>
                               </li>

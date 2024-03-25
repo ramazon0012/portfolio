@@ -10492,8 +10492,8 @@
           var r = document;
           if (e && t && r) {
             var l = 'link[rel="preload"][as="' + e2(t) + '"]';
-            "image" === t && n && n.imageSrcSet
-              ? ((l += '[imageSrcSet="' + e2(n.imageSrcSet) + '"]'),
+            "image" === t && n && n.imagesrcSet
+              ? ((l += '[imagesrcSet="' + e2(n.imagesrcSet) + '"]'),
                 "string" == typeof n.imageSizes &&
                   (l += '[imageSizes="' + e2(n.imageSizes) + '"]'))
               : (l += '[href="' + e2(e) + '"]');
@@ -10509,7 +10509,7 @@
               ((e = u(
                 {
                   rel: "preload",
-                  href: "image" === t && n && n.imageSrcSet ? void 0 : e,
+                  href: "image" === t && n && n.imagesrcSet ? void 0 : e,
                   as: t,
                 },
                 n
@@ -11166,8 +11166,8 @@
                 "string" == typeof t.fetchpriority ? t.fetchpriority : void 0,
               referrerPolicy:
                 "string" == typeof t.referrerPolicy ? t.referrerPolicy : void 0,
-              imageSrcSet:
-                "string" == typeof t.imageSrcSet ? t.imageSrcSet : void 0,
+              imagesrcSet:
+                "string" == typeof t.imagesrcSet ? t.imagesrcSet : void 0,
               imageSizes:
                 "string" == typeof t.imageSizes ? t.imageSizes : void 0,
             });
