@@ -7,14 +7,26 @@ import Script from "next/script";
 
 export default function Home() {
   const [post, setPost] = useState({});
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/articles")
+    axios
+      .get("http://127.0.0.1:8000/articles")
       .then((res) => {
         setPost(res.data);
       })
       .catch((error) => {
         console.error("Error fetching articles:", error);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/users")
+      .then((res) => {
+        setUser(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching users:", error);
       });
   }, []);
   return (
@@ -69,14 +81,11 @@ export default function Home() {
           crossOrigin=""
           async=""
         />
-        <Script src="src/chunks/250-df4736cf318585a8.js" async=""/>
-        <Script src="src/chunks/749-fd41a9816a63edf4.js" async=""/>
-        <Script src="src/chunks/2-4d4fe008758e4991.js" async=""/>
-        <Script
-          src="src/chunks/app/layout-3881dfce185fab35.js"
-          async=""
-        />
-        <Script src="src/chunks/app/page-7edc645259496314.js" async=""/>
+        <Script src="src/chunks/250-df4736cf318585a8.js" async="" />
+        <Script src="src/chunks/749-fd41a9816a63edf4.js" async="" />
+        <Script src="src/chunks/2-4d4fe008758e4991.js" async="" />
+        <Script src="src/chunks/app/layout-3881dfce185fab35.js" async="" />
+        <Script src="src/chunks/app/page-7edc645259496314.js" async="" />
         <Script
           src="src/chunks/polyfills-c67a75d1b6f99dc8.js"
           crossOrigin=""
@@ -559,52 +568,52 @@ export default function Home() {
                     <div className="mx-auto max-w-2xl lg:max-w-5xl">
                       <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
                         <div className="flex flex-col gap-16">
-                        {Object.values(post).map((article) => (
-                          <article className="group relative flex flex-col items-start">
-                            <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                              <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
-                              <Link href={`/article/${article.id}`}>
-                                <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-                                <span className="relative z-10">
-                                  {article.name}
+                          {Object.values(post).map((article) => (
+                            <article className="group relative flex flex-col items-start">
+                              <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                                <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
+                                <Link href={`/article/${article.id}`}>
+                                  <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
+                                  <span className="relative z-10">
+                                    {article.name}
+                                  </span>
+                                </Link>
+                              </h2>
+                              <time
+                                className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
+                                dateTime="2022-09-05"
+                              >
+                                <span
+                                  className="absolute inset-y-0 left-0 flex items-center"
+                                  aria-hidden="true"
+                                >
+                                  <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
                                 </span>
-                              </Link>
-                            </h2>
-                            <time
-                              className="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-                              dateTime="2022-09-05"
-                            >
-                              <span
-                                className="absolute inset-y-0 left-0 flex items-center"
+                                {article.created_at}
+                              </time>
+                              <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                                {article.description}
+                              </p>
+                              <div
                                 aria-hidden="true"
+                                className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
                               >
-                                <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                              </span>
-                              {article.created_at}
-                            </time>
-                            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                              {article.description}
-                            </p>
-                            <div
-                              aria-hidden="true"
-                              className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
-                            >
-                              Read article
-                              <svg
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                aria-hidden="true"
-                                className="ml-1 h-4 w-4 stroke-current"
-                              >
-                                <path
-                                  d="M6.75 5.75 9.25 8l-2.5 2.25"
-                                  strokeWidth="1.5"
-                                  strokeLinejoin="round"
-                                ></path>
-                              </svg>
-                            </div>
-                          </article>
-                        ))}
+                                Read article
+                                <svg
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  aria-hidden="true"
+                                  className="ml-1 h-4 w-4 stroke-current"
+                                >
+                                  <path
+                                    d="M6.75 5.75 9.25 8l-2.5 2.25"
+                                    strokeWidth="1.5"
+                                    strokeLinejoin="round"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </article>
+                          ))}
                         </div>
                         <div className="space-y-10 lg:pl-16 xl:pl-24">
                           <form
@@ -675,142 +684,44 @@ export default function Home() {
                               <span className="ml-3">Work</span>
                             </h2>
                             <ol className="mt-6 space-y-4">
-                              <li className="flex gap-4">
-                                <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                                  <img
-                                    alt=""
-                                    loading="lazy"
-                                    width="32"
-                                    height="32"
-                                    decoding="async"
-                                    data-nimg="1"
-                                    className="h-7 w-7"
-                                    style={{ color: "transparent" }}
-                                    src="/_next/static/media/planetaria.ecd81ade.svg"
-                                  />
-                                </div>
-                                <dl className="flex flex-auto flex-wrap gap-x-2">
-                                  <dt className="sr-only">Company</dt>
-                                  <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                    Planetaria
-                                  </dd>
-                                  <dt className="sr-only">Role</dt>
-                                  <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                    CEO
-                                  </dd>
-                                  <dt className="sr-only">Date</dt>
-                                  <dd
-                                    className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                                    aria-label="2019 until Present"
-                                  >
-                                    <time dateTime="2019">2019</time>
-                                    <span aria-hidden="true">—</span>
-                                    <time dateTime="2024">Present</time>
-                                  </dd>
-                                </dl>
-                              </li>
-                              <li className="flex gap-4">
-                                <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                                  <img
-                                    alt=""
-                                    loading="lazy"
-                                    width="28"
-                                    height="28"
-                                    decoding="async"
-                                    data-nimg="1"
-                                    className="h-7 w-7"
-                                    style={{ color: "transparent" }}
-                                    src="/_next/static/media/airbnb.b4000690.svg"
-                                  />
-                                </div>
-                                <dl className="flex flex-auto flex-wrap gap-x-2">
-                                  <dt className="sr-only">Company</dt>
-                                  <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                    Airbnb
-                                  </dd>
-                                  <dt className="sr-only">Role</dt>
-                                  <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                    Product Designer
-                                  </dd>
-                                  <dt className="sr-only">Date</dt>
-                                  <dd
-                                    className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                                    aria-label="2014 until 2019"
-                                  >
-                                    <time dateTime="2014">2014</time>
-                                    <span aria-hidden="true">—</span>
-                                    <time dateTime="2019">2019</time>
-                                  </dd>
-                                </dl>
-                              </li>
-                              <li className="flex gap-4">
-                                <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                                  <img
-                                    alt=""
-                                    loading="lazy"
-                                    width="28"
-                                    height="28"
-                                    decoding="async"
-                                    data-nimg="1"
-                                    className="h-7 w-7"
-                                    style={{ color: "transparent" }}
-                                    src="/_next/static/media/facebook.dd9e7d48.svg"
-                                  />
-                                </div>
-                                <dl className="flex flex-auto flex-wrap gap-x-2">
-                                  <dt className="sr-only">Company</dt>
-                                  <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                    Facebook
-                                  </dd>
-                                  <dt className="sr-only">Role</dt>
-                                  <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                    iOS Software Engineer
-                                  </dd>
-                                  <dt className="sr-only">Date</dt>
-                                  <dd
-                                    className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                                    aria-label="2011 until 2014"
-                                  >
-                                    <time dateTime="2011">2011</time>
-                                    <span aria-hidden="true">—</span>
-                                    <time dateTime="2014">2014</time>
-                                  </dd>
-                                </dl>
-                              </li>
-                              <li className="flex gap-4">
-                                <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                                  <img
-                                    alt=""
-                                    loading="lazy"
-                                    width="28"
-                                    height="28"
-                                    decoding="async"
-                                    data-nimg="1"
-                                    className="h-7 w-7"
-                                    style={{ color: "transparent" }}
-                                    src="/_next/static/media/starbucks.4a5bd050.svg"
-                                  />
-                                </div>
-                                <dl className="flex flex-auto flex-wrap gap-x-2">
-                                  <dt className="sr-only">Company</dt>
-                                  <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                    Starbucks
-                                  </dd>
-                                  <dt className="sr-only">Role</dt>
-                                  <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                    Shift Supervisor
-                                  </dd>
-                                  <dt className="sr-only">Date</dt>
-                                  <dd
-                                    className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                                    aria-label="2008 until 2011"
-                                  >
-                                    <time dateTime="2008">2008</time>
-                                    <span aria-hidden="true">—</span>
-                                    <time dateTime="2011">2011</time>
-                                  </dd>
-                                </dl>
-                              </li>
+                              {Object.values(user).map((user) =>
+                                user.works.map((work) => (
+                                  <li className="flex gap-4" key={work.id}>
+                                    <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                                      <img
+                                        alt=""
+                                        loading="lazy"
+                                        width="32"
+                                        height="32"
+                                        decoding="async"
+                                        data-nimg="1"
+                                        className="h-7 w-7"
+                                        style={{ color: "transparent" }}
+                                        src="/_next/static/media/planetaria.ecd81ade.svg"
+                                      />
+                                    </div>
+                                    <dl className="flex flex-auto flex-wrap gap-x-2">
+                                      <dt className="sr-only">Company</dt>
+                                      <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                                        {work.name}
+                                      </dd>
+                                      <dt className="sr-only">Role</dt>
+                                      <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+                                        {work.work}
+                                      </dd>
+                                      <dt className="sr-only">Date</dt>
+                                      <dd
+                                        className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                                        aria-label={`${work.time} until Present`}
+                                      >
+                                        <time dateTime={work.time}>
+                                          {work.time}
+                                        </time>
+                                      </dd>
+                                    </dl>
+                                  </li>
+                                ))
+                              )}
                             </ol>
                             <Link
                               className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
