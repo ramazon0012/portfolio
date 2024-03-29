@@ -10,6 +10,7 @@ export default function Document() {
           <Script rel="stylesheet" href="/src/chunks/250-df4736cf318585a8.js" />
           <Script rel="stylesheet" href="/src/chunks/749-fd41a9816a63edf4.js" />
           <Script rel="stylesheet" href="/src/chunks/938-97a4c5fe53c20fb7.js" />
+          <Script rel="stylesheet" href="/src/chunks/webpack-e799c267c86ca5b6.js" />
           <Script rel="stylesheet" href="/src/chunks/app/layout-3881dfce185fab35.js" />
           <Script rel="stylesheet" href="/src/chunks/app/about/page-4a6ecdc8f5394bd0.js" />
           <Script rel="stylesheet" href="/src/chunks/app/articles/page-2b6ac5b875e3cc20.js" />
