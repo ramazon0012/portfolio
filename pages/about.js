@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -213,7 +214,7 @@ export default function Home() {
                     <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
                       <div className="lg:pl-20">
                         <div className="max-w-xs px-2.5 lg:max-w-none">
-                          <img
+                          <Image
                             alt=""
                             loading="lazy"
                             width="800"
@@ -241,7 +242,7 @@ export default function Home() {
                                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=2048&amp;q=75 2048w,
                                 /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=3840&amp;q=75 3840w
                             "
-                            src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=3840&amp;q=75"
+                            src="https://localhost:3000/src/images/photo_2023-02-28_15-55-36.jpg"
                           />
                         </div>
                       </div>
