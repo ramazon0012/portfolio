@@ -54,7 +54,7 @@ export default function Article() {
                               className="pointer-events-auto"
                               href="/"
                             >
-                              <img
+                              <Image
                                 alt=""
                                 fetchpriority="high"
                                 width="512"
@@ -244,17 +244,16 @@ export default function Article() {
                         {Object.values(post).map((project) => (
                             <li className="group relative flex flex-col items-start">
                             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                                <Image
+                            <Image
                                 alt=""
                                 loading="lazy"
-                                width="32"
-                                height="32"
+                                width={32}
+                                height={32}
                                 decoding="async"
                                 data-nimg="1"
                                 className="h-8 w-8"
-                                style={{ color: "transparent" }}
                                 src={project.image.url}
-                                />
+                            />
                             </div>
                             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                                 <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>

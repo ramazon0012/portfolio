@@ -69,7 +69,7 @@ export default function Home() {
                                 //             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=2048&amp;q=75 2048w,
                                 //             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.51a13c67.jpg&amp;w=3840&amp;q=75 3840w
                                 //         "
-                                  src={"https://avatars.mds.yandex.net/i?id=e5459b85f6420bee8f5b430793e53fe752e7995d-7698965-images-thumbs&n=13"}
+                                  src={" "}
                               />
                             </Link>
                           </div>
@@ -242,7 +242,7 @@ export default function Home() {
                             //     /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=2048&amp;q=75 2048w,
                             //     /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&amp;w=3840&amp;q=75 3840w
                             // "
-                            src="https://avatars.mds.yandex.net/i?id=e5459b85f6420bee8f5b430793e53fe752e7995d-7698965-images-thumbs&n=13"
+                            src=" "
                           />
                         </div>
                       </div>
