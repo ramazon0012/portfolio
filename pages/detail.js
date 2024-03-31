@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Detail() {
@@ -36,7 +37,7 @@ export default function Detail() {
                               className="pointer-events-auto"
                               href="/"
                             >
-                              <img
+                              <Image
                                 alt=""
                                 fetchpriority="high"
                                 width="512"
@@ -232,7 +233,7 @@ export default function Detail() {
                               us 100 years from now when humanity has spread
                               across our entire solar system.
                             </p>
-                            <img
+                            <Image
                               alt=""
                               loading="lazy"
                               width="1310"

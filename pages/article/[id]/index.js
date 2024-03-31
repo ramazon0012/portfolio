@@ -64,7 +64,7 @@ export default function DetailPage() {
                               className="pointer-events-auto"
                               href="/"
                             >
-                              <img
+                              <Image
                                 alt=""
                                 fetchpriority="high"
                                 width="512"
@@ -261,9 +261,7 @@ export default function DetailPage() {
                               decoding="async"
                               data-nimg="1"
                               style={{ color: "transparent" }}
-                              srcSet={
-                                    item.image.url
-                                  }
+                              srcSet={item.image.url}
                               src={item.image.url}
                             />
                             <p>{item.body}</p>

@@ -4,7 +4,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['avatars.mds.yandex.net'],
+    domains: ['127.0.0.1'],
   },
 };
 
