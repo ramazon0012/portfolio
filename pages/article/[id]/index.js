@@ -15,6 +15,7 @@ export default function DetailPage() {
       axios.get(`http://127.00.0.1:8000/article/${id}`)
         .then((response) => {
           setItem(response.data);
+          console.log(response.data);
         })
         .catch((error) => {
           console.error('Error fetching item:', error);

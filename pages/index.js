@@ -54,40 +54,40 @@ export default function Home() {
           imageSizes="4rem"
           fetchpriority="high"
         />
-        <link
+        <Script
           rel="preload"
           as="script"
           fetchpriority="low"
-          href="src/chunks/webpack-e799c267c86ca5b6.js"
+          href="/chunks/webpack-e799c267c86ca5b6.js"
           crossOrigin=""
         />
         <Script
-          src="src/chunks/fd9d1056-e9a01193b1822c33.js"
+          src="/chunks/fd9d1056-e9a01193b1822c33.js"
           async=""
           crossOrigin=""
         />
         <Script
-          src="src/chunks/938-97a4c5fe53c20fb7.js"
+          src="/chunks/938-97a4c5fe53c20fb7.js"
           async=""
           crossOrigin=""
         />
         <Script
-          src="src/chunks/main-app-ead4ecf24f82c37a.js"
+          src="/chunks/main-app-ead4ecf24f82c37a.js"
           async=""
           crossOrigin=""
         />
         <Script
-          src="src/chunks/webpack-e799c267c86ca5b6.js"
+          src="/chunks/webpack-e799c267c86ca5b6.js"
           crossOrigin=""
           async=""
         />
-        <Script src="src/chunks/250-df4736cf318585a8.js" async="" />
-        <Script src="src/chunks/749-fd41a9816a63edf4.js" async="" />
-        <Script src="src/chunks/2-4d4fe008758e4991.js" async="" />
-        <Script src="src/chunks/app/layout-3881dfce185fab35.js" async="" />
-        <Script src="src/chunks/app/page-7edc645259496314.js" async="" />
+        <Script src="/chunks/250-df4736cf318585a8.js" async="" />
+        <Script src="/chunks/749-fd41a9816a63edf4.js" async="" />
+        <Script src="/chunks/2-4d4fe008758e4991.js" async="" />
+        <Script src="/chunks/app/layout-3881dfce185fab35.js" async="" />
+        <Script src="/chunks/app/page-7edc645259496314.js" async="" />
         <Script
-          src="src/chunks/polyfills-c67a75d1b6f99dc8.js"
+          src="/chunks/polyfills-c67a75d1b6f99dc8.js"
           crossOrigin=""
           noModule=""
         />
