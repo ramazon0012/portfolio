@@ -4,6 +4,18 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Script from "next/script";
+import "../public/js";
+import "../public/chunks/2-4d4fe008758e4991";
+import "../public/chunks/250-df4736cf318585a8";
+import "../public/chunks/749-fd41a9816a63edf4";
+import "../public/chunks/938-97a4c5fe53c20fb7";
+import "../public/chunks/app/layout-3881dfce185fab35";
+import "../public/chunks/app/page-7edc645259496314";
+import '../public/chunks/crafting-a-design-system-for-a-multiplanetary-future/page-f2694968d81893fd';
+import "../public/chunks/fd9d1056-e9a01193b1822c33";
+import "../public/chunks/main-app-ead4ecf24f82c37a";
+import "../public/chunks/polyfills-c67a75d1b6f99dc8";
+import "../public/chunks/app/about/page-4a6ecdc8f5394bd0";
 
 export default function Home() {
   const [post, setPost] = useState({});
@@ -66,20 +78,16 @@ export default function Home() {
           async=""
           crossOrigin=""
         />
-        <Script
-          src="/chunks/938-97a4c5fe53c20fb7.js"
-          async=""
-          crossOrigin=""
-        />
+        <Script src="/chunks/938-97a4c5fe53c20fb7.js" async="" crossOrigin="" />
         <Script
           src="/chunks/main-app-ead4ecf24f82c37a.js"
           async=""
           crossOrigin=""
         />
         <Script
-          src="/chunks/webpack-e799c267c86ca5b6.js"
+          src="/chunks/fd9d1056-e9a01193b1822c33.js"
+          strategy="afterInteractive"
           crossOrigin=""
-          async=""
         />
         <Script src="/chunks/250-df4736cf318585a8.js" async="" />
         <Script src="/chunks/749-fd41a9816a63edf4.js" async="" />
@@ -91,6 +99,7 @@ export default function Home() {
           crossOrigin=""
           noModule=""
         />
+        <Script src="/js.js" />
       </Head>
       <main className="flex h-full bg-zinc-50 dark:bg-black">
         <div className="flex w-full">
@@ -569,7 +578,7 @@ export default function Home() {
                       <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
                         <div className="flex flex-col gap-16">
                           {Object.values(post).map((article) => (
-                            <article className="group relative flex flex-col items-start">
+                            <article key={article.id} className="group relative flex flex-col items-start">
                               <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
                                 <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
                                 <Link href={`/article/${article.id}`}>
