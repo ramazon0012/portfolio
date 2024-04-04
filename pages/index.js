@@ -4,18 +4,6 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Script from "next/script";
-import "../public/js";
-import "../public/chunks/2-4d4fe008758e4991";
-import "../public/chunks/250-df4736cf318585a8";
-import "../public/chunks/749-fd41a9816a63edf4";
-import "../public/chunks/938-97a4c5fe53c20fb7";
-import "../public/chunks/app/layout-3881dfce185fab35";
-import "../public/chunks/app/page-7edc645259496314";
-import '../public/chunks/crafting-a-design-system-for-a-multiplanetary-future/page-f2694968d81893fd';
-import "../public/chunks/fd9d1056-e9a01193b1822c33";
-import "../public/chunks/main-app-ead4ecf24f82c37a";
-import "../public/chunks/polyfills-c67a75d1b6f99dc8";
-import "../public/chunks/app/about/page-4a6ecdc8f5394bd0";
 
 export default function Home() {
   const [post, setPost] = useState({});
